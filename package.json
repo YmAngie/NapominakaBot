@@ -1,0 +1,24 @@
+{
+  "name": "napominakabot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YmAngie/NapominakaBot.git"
+  },
+  "author": "Angelika Ymydykova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YmAngie/NapominakaBot/issues"
+  },
+  "homepage": "https://github.com/YmAngie/NapominakaBot#readme",
+  "dependencies": {
+    "cron": "^1.3.0",
+    "node-telegram-bot-api": "^0.30.0",
+    "request": "^2.83.0"
+  }
+}
