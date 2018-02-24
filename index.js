@@ -17,7 +17,7 @@ bot.on('message', function(msg) {
 
 
 // enable Cron
-var job = new CronJob('0,15,30,45 * * * * *', function() {
+const job = new CronJob('0,15,30,45 * * * * *', function() {
 	console.log('knock-knock');
 });
 
