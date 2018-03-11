@@ -1,14 +1,16 @@
 "use strict";
 
+import { token } from './token.js';
+
 const TelegramBot = require('node-telegram-bot-api'),
 	CronJob = require('cron').CronJob,
 	request = require('request'),
-	token = '528622242:AAE_3eqMAzzYCPagYQSB6QZrjxNp2Wt6v6E';
+	test = 'test';
 
 // temporary solution for testing without sending a start message every time
 // TO DO: change after host within heroku
 let chatId = '109792809' || '';
-//let chatId = '';
+// let chatId = '';
 
 const bot = new TelegramBot(token, {
 	polling: true,
