@@ -7,21 +7,16 @@ const TelegramBot = require('node-telegram-bot-api'),
 	request = require('request'),
 	test = 'test';
 
-// temporary solution for testing without sending a start message every time
-// TO DO: change after host within heroku
-let chatId = '109792809' || '';
-// let chatId = '';
-
 const bot = new TelegramBot(token, {
 	polling: true,
 });
 
-// TO DO: save chatId only once?
 bot.on('message', function(msg) {
-	chatId = msg.chat.id;
+	let chatId = msg.chat.id;
+	getFortuneCookie(chatId);
 })
 
-const job = new CronJob('15,30,45 * * * * *', function() {
+function getFortuneCookie(chatId) {
 	const url = 'http://www.yerkee.com/api/fortune';
 
 	request(url, function(error, response, body) {
@@ -29,6 +24,4 @@ const job = new CronJob('15,30,45 * * * * *', function() {
 		
 		bot.sendMessage(chatId, data.fortune);
 	});
-});
-
-job.start();
+}
